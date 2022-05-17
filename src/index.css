@@ -1,13 +1,114 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #f1f1f1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  border: none;
+}
+.header {
+  background-color: var(--primary);
+  padding: 1.25rem;
+  color: rgb(93, 89, 83);
+  margin-bottom: 0.7rem;
+}
+.rounded-5 {
+  border-radius: 5%;
+}
+.create-card {
+  background-color: var(--primary);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 33.33%;
+}
+.create-card__input {
+  outline: none;
+  padding: 0.3rem 0.5rem;
+  background-color: white;
+  border: none;
+  margin: 8px 0;
+}
+.add-list {
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  border-radius: 7%;
+  transition: all ease-in-out 0.3s;
+  border: none;
+}
+.add-list:active {
+  transform: scale(0.9);
+}
+.add-list:hover {
+  background-color: rgb(121, 114, 114);
+}
+
+.list {
+  background-color: var(--primary);
+  padding: 1rem;
+  width: 33.33%;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(82, 78, 74);
+  font-weight: bold;
+}
+.list-heading {
+  font-size: 1.25rem;
+  font-family: cursive;
+}
+.delete {
+  font-size: 1.25rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
+}
+.list-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.desc {
+  font-size: 0.85rem;
+  font-family: cursive;
+  margin: 1rem 0;
+}
+
+.delete-card {
+  background: white;
+}
+
+.add-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  margin-top: 1rem;
 }

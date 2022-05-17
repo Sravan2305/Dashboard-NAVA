@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CreateLists } from "./CreateLists";
+import { Header } from "./Header";
+import { List } from "./List";
 
-function App() {
+export const DataContext = React.createContext(null);
+export const App = () => {
+  const [data, setData] = React.useState([]);
+  const [addList, setAddList] = React.useState(false);
+  const Lists = data.map((list) => {
+    return <List key={list.id} {...list} />;
+  });
+  Lists.push(<CreateLists show={addList} setShow={setAddList} />);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContext.Provider value={{ data, setData }}>
+      <Header />
+      <section className="lists">{Lists}</section>
+    </DataContext.Provider>
   );
-}
-
-export default App;
+};
